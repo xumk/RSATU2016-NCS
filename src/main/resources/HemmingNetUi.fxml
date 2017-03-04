@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HemmingNetUiController">
+    <tabs>
+        <Tab fx:id="r" text="Инициализация сети">
+            <content>
+                <AnchorPane fx:id="initializationTab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Label layoutX="42.0" layoutY="39.0" text="Количество нейронов" />
+                        <Label layoutX="42.0" layoutY="76.0" text="Число бинарных признаков" />
+                        <TextField fx:id="numberNeuronsField" layoutX="215.0" layoutY="35.0" />
+                        <TextField fx:id="numberBinarySignsField" layoutX="215.0" layoutY="72.0" />
+                        <Button fx:id="initNet" layoutX="215.0" layoutY="226.0" mnemonicParsing="false" onAction="#initializationNetAction" text="Инициализировать сеть" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="trainingPane" disable="true" text="Обучение сети">
+            <content>
+                <AnchorPane fx:id="viewMainSimplesPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="deleteSimle" layoutX="426.0" layoutY="241.0" mnemonicParsing="false" onAction="#deletedSimpleAction" text="Удалить образец" />
+                        <Button fx:id="addSimple" layoutX="41.0" layoutY="241.0" mnemonicParsing="false" onAction="#addSimpleAction" text="Добавить образцев" />
+                        <ScrollPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="572.0">
+                            <content>
+                                <HBox fx:id="viewSimplesPane" prefHeight="200.0" prefWidth="558.0" />
+                            </content>
+                        </ScrollPane>
+                        <Button layoutX="446.0" layoutY="319.0" mnemonicParsing="false" onAction="#teachingNetAction" text="Обучить сеть" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab disable="true" text="Работа сети">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Button layoutX="222.0" layoutY="306.0" mnemonicParsing="false" onAction="#runNetAction" text="Найти заданный образец" />
+                        <Label layoutX="29.0" layoutY="14.0" text="Искомый образец" />
+                        <Label layoutX="314.0" layoutY="14.0" text="Найденный" />
+                        <Button layoutX="29.0" layoutY="245.0" mnemonicParsing="false" onAction="#sendFindSimpleAction" text="Задать образец" />
+                        <ScrollPane fx:id="viewFindSimple" layoutX="22.0" layoutY="31.0" prefHeight="200.0" prefWidth="265.0" />
+                        <ScrollPane fx:id="viewFoundSimple" disable="true" layoutX="309.0" layoutY="31.0" prefHeight="200.0" prefWidth="266.0" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="weightingCoefficientMatrixView" disable="true" text="Матрица весовых коэффициентов нейронной сети Хэмминга">
+            <content>
+                <AnchorPane fx:id="weightingCoefficientMatrix" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="scalesFeedbackMatrixView" disable="true" text="Матрица весов обратных связей нейронной сети Хэмминга">
+            <content>
+                <AnchorPane fx:id="scalesFeedbackMatrixMatrix" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                </AnchorPane>
+            </content>
+        </Tab>
+      <Tab fx:id="graphicTab" text="График сходимости" disable="true">
+        <content>
+          <AnchorPane fx:id="graphic" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+    </tabs>
+</TabPane>

@@ -1,0 +1,11 @@
+*.toc
+/report.aux
+/report.dvi
+/report.log
+*.pdf
+*.gz
+*.bbl
+*.bcf
+*.blg
+*.xml
+*.log
